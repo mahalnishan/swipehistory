@@ -158,7 +158,7 @@ const Home = () => {
               </div>
               <div className="text-xs sm:text-sm text-white/70">{yearIndex + 1} / {years.length}</div>
             </div>
-            <div className="mt-4 flex-1 min-h-0 overflow-y-auto overscroll-y-contain pr-2">
+            <div className="mt-4 flex-1 min-h-0 overflow-y-auto overscroll-y-contain pr-2" style={{ WebkitOverflowScrolling: 'touch' }}>
               <Achievement year={currentYear} />
             </div>
 
@@ -267,13 +267,13 @@ const Achievement = ({ year }: AchievementProps) => {
   }
 
   if (items.length === 0) {
-    return <p className="mt-8 text-lg sm:text-xl leading-relaxed text-white/70">No highlights found.</p>;
+    return <p className="mt-8 text-lg sm:text-xl leading-relaxed text-white/70 break-words">No highlights found.</p>;
   }
 
   return (
-    <ul className="mt-8 space-y-3 text-white/90">
+    <ul className="mt-8 space-y-3 text-white/90 break-words">
       {items.map((item, idx) => (
-        <li key={`${year}-${idx}`} className="text-xl sm:text-2xl leading-relaxed">
+        <li key={`${year}-${idx}`} className="text-xl sm:text-2xl leading-relaxed break-words">
           {item}
         </li>
       ))}
