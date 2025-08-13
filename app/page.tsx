@@ -158,8 +158,12 @@ const Home = () => {
               </div>
               <div className="text-xs sm:text-sm text-white/70">{yearIndex + 1} / {years.length}</div>
             </div>
-            <div className="mt-4 flex-1 min-h-0 overflow-y-auto overscroll-y-contain pr-2" style={{ WebkitOverflowScrolling: 'touch' }}>
+            <div className="mt-4 flex-1 min-h-0 overflow-y-auto overscroll-y-contain pr-2 relative max-h-[55vh] sm:max-h-none" style={{ WebkitOverflowScrolling: 'touch' }}>
               <Achievement year={currentYear} />
+              <div
+                aria-hidden
+                className="pointer-events-none absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-black/40 via-black/10 to-transparent"
+              />
             </div>
 
             <div className="mt-4 sm:mt-6 flex items-center justify-between">
